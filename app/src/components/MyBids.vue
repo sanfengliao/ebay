@@ -39,6 +39,7 @@
        getAllProduct() {
         let instance
         this.myBidProducts = []
+        this.myPurchases = []
         BlindAution.deployed().then(i => {
           instance = i
           return instance.getProductCount()

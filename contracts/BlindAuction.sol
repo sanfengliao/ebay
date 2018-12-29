@@ -140,6 +140,7 @@ contract BlindAuction {
     function done(uint productId) public {
         require(products[productId].productStatus == ProductStatus.Open, "商品拍卖为开始");
         require(now > products[productId].auctionStartTime, "时间未到");
+        require(products[productId].highestBidder != 0);
         products[productId].productStatus = ProductStatus.Deal;
 
     }
